@@ -1,0 +1,56 @@
+.about {
+	@include flex(row, space-around);
+	flex-wrap: wrap;
+	padding: $gutter;
+
+	section {
+		padding-top: 3em;
+	}
+	p {
+		padding: 1.7em;
+
+		&:first-of-type {
+			@media(min-width: 999px) {
+				padding: 0 1.7em;
+			}
+		}
+	}
+	h2 {
+		padding: 0 1em;	
+	}
+	img {
+		width: 100%;
+		margin-top: 2em;
+
+		@media(min-width: 999px) {
+			margin-top: 0;
+		}
+	}
+
+	.text {
+		@include xlarge-block;
+	}
+
+	figure {
+		@include medium-block;
+		order: -1;
+		max-width: 20em;
+	
+		@media(min-width: 999px) {
+			order: 1;
+		}
+	}
+
+	ul {
+		display: inline-block;
+	}
+	
+	ul:last-of-type {
+		list-style-type: circle;
+		
+		li {
+			background-color: $secondary-color;
+			color: $white;
+		}	
+	}
+}

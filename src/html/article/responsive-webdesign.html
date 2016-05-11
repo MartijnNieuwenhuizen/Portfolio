@@ -1,0 +1,69 @@
+@@include('./src/html/includes/_base/head.html')
+@@include('./src/html/includes/_base/nav.html')
+
+<main class="detail blog-detail"> 
+	
+	<h1>Responsive webdesign, flexibel omgaan met content</h1>
+
+	<section class="meta">
+		<span class="publisher"><a href="https://www.occhio.nl/blog/responsive-webdesign-flexibel-omgaan-met-content/" target="_blank">Occhio.nl</a></span> <span class="date">03-06-2015</span> <p class="tags"><span>Responsive</span><span>Webdesign</span><span>UI</span></p>
+	</section>
+	
+	<p class="note">
+		Bij webshops zien we overigens juist steeds meer aparte mobiele websites, helemaal ingericht op de mobiele gebruikservaring.
+	</p>
+	<p>
+		Zoals we ongeveer allemaal wel weten is responsive webdesign dé nieuwe standaard. We schreven er eerder al vaker over. Maar waarom is dat eigenlijk zo? En waarom zijn de aparte mobile sites zo goed als verdwenen? Weet je nog niet precies wat responsive webdesign precies inhoudt? Lees dan eerst eens deze blog responsive-webdesign.
+	</p>
+
+	<h2>Waarom responsive?</h2>
+	<p>Er zijn verschillende redenen waarom responsive webdesign niet meer weg te denken is.</p>
+	<p>
+		Ten eerste betekent het hebben van een aparte mobile site dat je (over het algemeen) informatie op twee sites moet wijzigen (namelijk desktop en mobiele versie). En dat werkt niet fijn. Het is extra werk om de content te onderhouden en foutgevoeliger.
+		Maar er is nog een andere en grotere reden: De mobile site is in het leven geroepen om een website goed te laten werken op een smartphone.	
+	</p>
+	<p>
+		Tegenwoordig is mobiel niet meer de enige uitzondering op de computer. Denk hierbij aan alle schermformaten van tablets, e-readers, retina schermen, tv’s, interactieve borden, billboards, horloges, brillen en ga zo maar door.
+		Bijna elk apparaat beschikt wel over een internetconnectie en dus kan jouw site bezocht worden vanaf zo’n apparaat. Het is dan ook onbegonnen werk om voor elke uitzondering een aparte site te bouwen. De oplossing hiervoor is responsive webdesign.
+	</p>
+	
+	<h2>De uitdagingen van responsive</h2>
+	<p>
+		Maar ook responsive webdesign brengt uitdagingen met zich mee.
+		Als een site ontworpen wordt, wordt deze vaak pixel perfect gemaakt. Dit geeft de ontwerper totale controle over zijn of haar design. Het is alleen niet mogelijk om voor elk schermformaat van elk apparaat een ontwerp te maken (ja dat kan wel, maar is zeer arbeidsintensief en wordt daarom vaak beperkt tot 2 of 3 basisontwerpen (desktop, tablet, mobiel).
+		Gelukkig is daar een nieuwe trend die een oplossing kan bieden: een flexibele layout.
+	</p>
+	<img src="" alt="with-flexbox">
+	
+	<h2>Flexibele layout to the rescue!</h2>
+	<p>
+		Een flexibele layout wilt zeggen dat de browser het rekenwerk van een layout op zich neemt. De ontwerper raakt hierdoor een klein deel controle kwijt, maar krijgt een ‘slimmere’ layout ervoor terug. Het resultaat is een layout die zich slim aanpast aan de verschillende scherm-
+		formaten. Of we deze werkwijze inzetten is een overweging die per project gemaakt moet worden.
+	</p>
+
+	<h2>Flexbox</h2>
+	<p>
+		Voor de developers onder ons, de methode die hiervoor gebruikt wordt, is flexbox. Met flexbox kun je een flexibele layout maken die flexibele content bevat. Deze is makkelijk en snel uit te lijnen.
+		Het voordeel van flexbox is dat het ontwikkeld is met responsive webdesign in gedachte.	
+	</p>
+	
+	<h2>De internetverbinding als beperkende factor</h2>
+	<p>
+		Eén responsive site voor elk apparaat brengt het volgende struikelblok met zich mee: de (snelheid van de) internetverbinding.
+		Eerder vertelde ik al dat bijna elk apparaat verbonden is met het internet. Maar als je een website maakt voor horloges, mobiele telefoons én billboards, moeten foto’s, video’s, (eigenlijk welke content dan ook) er op elk apparaat goed uit zien. Een foto die je bekijkt op een laptop is alleen wel weer veel te groot (qua bestandsformaat, dus in kb’s) om op een mobiel te tonen. Het is ten eerste niet nodig om zo’n grote afbeelding in te laden (klein scherm) en ten tweede verbruikt dit ook nog eens heel veel data.
+		Gelukkig is daar ook al een oplossing voor die al wel overal gebruikt kan worden: De ‘Mobile First’ gedachte.	
+	</p>
+	<p>
+		Mobile First betekent o.a. dat je begint te ontwerpen met de mobiel in gedachte. Een kleiner scherm betekent vaak automatisch dat je minder content tegelijk kan laten zien. (Vaak wordt door deze methode ook veel overige content, en dus tegelijkertijd minder belangrijke content, geschrapt). Als de site responsive wordt gemaakt, wordt dit gedaan met technieken zoals mediaqueries en het picture element (of een andere techniek). Deze twee technische oplossingen zorgen ervoor dat op een kleiner scherm kleinere afbeeldingen en minder content ingeladen wordt zodat een site ook op een kleiner scherm beter presteert. Naarmate het scherm groter wordt, wordt er meer content toegevoegd of grotere afbeeldingen ingeladen. Hierbij kun je er vaak ook vanuit gaan dat als je een groter scherm gebruikt je internetconnectie vaak beter is en je dus meer data in kan laden.
+	</p>
+
+	<h2>Kortom</h2>
+	<p>
+		Een goede responsive website is dus een oplossing voor het almaar groeiende assortiment schermformaten. Jammer dat we nog even moeten wachten op Flexbox.
+	</p>
+
+	<p class="publiced-on"> Blog gepubliceerd op: <a href="https://www.occhio.nl/blog/responsive-webdesign-flexibel-omgaan-met-content/" target="_blank">occhio.nl</a></p>
+
+</main>
+	
+@@include('./src/html/includes/_base/footer.html')

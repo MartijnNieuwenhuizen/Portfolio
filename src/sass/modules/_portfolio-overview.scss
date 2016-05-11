@@ -1,0 +1,90 @@
+$height-one: 15em;
+$height-two: 20em;
+$height-two: 25em;
+
+.portfolio {
+	@include flex(row, flex-start);
+	flex-wrap: wrap;
+
+	article {
+		width: 100%;
+		height: $height-one;
+		display: inline-block;
+		padding: 0em;
+		margin: 0em;
+		@include flex(column, center);
+		justify-content: center;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		font-family: $secondary-font;
+
+		a {
+			@include flex(column, center);
+			justify-content: center;
+			width: 100%;
+			height: $height-one;
+			padding: 0em;
+			margin: 0em;
+		}
+	}
+	
+	/* loop thrue all the projectes */
+	@each $projects, $bgcolor in $projects {
+		/* colors */
+		$bgcolor-lighten: lighten($bgcolor, 40);
+		$transparanse: transparentize($bgcolor-lighten, 0.2);
+		
+		/* single project */
+	    ##{$projects} {
+			background-image: url('../img/portfolio/#{$projects}/header.jpg');
+
+			a {
+				transition: .2s;
+				background-color: $transparanse;
+
+				&:hover {
+					transition: .2s;
+					background-color: transparentize($bgcolor-lighten, 0.9);
+
+					h3, p {
+						transition: .2s;
+						opacity: 0;
+					}
+				}
+			}
+			h3, p {
+				transition: .2s;
+				opacity: 1;
+				color: if(lightness($bgcolor) < 50%, $snowWhite, $font-black);
+			}
+	    }
+	}
+	/* png's */
+	#struikrover {
+		background-image: url('../img/portfolio/struikrover/header.png');
+	}
+
+
+	@media(min-width: 700px) {
+		article {
+			width: 50%;
+			height: $height-two;
+
+			a {
+				height: $height-two;
+			}
+		}
+	}
+	@media(min-width: 1400px) {
+		article {
+			width: 33.3%;
+			height: $height-two;
+
+			a {
+				height: $height-two;
+			}
+		}
+	}
+}
+

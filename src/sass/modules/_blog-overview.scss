@@ -1,0 +1,57 @@
+.blog {
+	@include flex(row, center);
+	flex-wrap: wrap;
+	padding-bottom: 4em;
+
+	article {
+		@include large-block;
+		@include flex(column, flex-start);
+		margin: 1.5em 1em;
+		border: 5px solid $secondary-color;
+
+		h2 {
+			background-color: white;
+			padding: 0em 0.5em;
+			margin-left: 0.5em;
+			margin-top: -0.65em;
+			margin-right: auto;
+		}
+		p {
+			padding: 0.5em 0.5em 0.5 0.5em;
+			margin: 1em 1em 0em 1em;
+			margin-top: .3em;
+
+			font-family: $secondary-font;
+		}
+
+		&:first-of-type {
+			margin-top: 4em;
+		}
+	}
+
+	@media(min-width: 700px) {
+		article {
+			@include xlarge-block;
+			margin: 2em;
+
+			p {
+				padding: 1em 1em 1em 1em;
+			}
+		}
+	}	
+
+	@media(min-width: 1150px) {
+		article {
+			@include xlarge-block;
+			margin: 4em 2em 2em 2em;
+
+			&:nth-of-type(even) {
+				h2 {
+					margin-right: 0.5em;
+					margin-left: auto;
+				}			
+			}
+		}
+	}	
+}
+

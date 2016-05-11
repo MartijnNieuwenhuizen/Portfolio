@@ -1,0 +1,128 @@
+header.menu {
+	padding: $xxlarge-gutter $gutter;
+	background-color: $prime-color;
+	@include flex(column, flex-start);
+	justify-content: center;
+	
+	h2 {
+		color: $prime-color-lighter;
+	}
+	h1 {
+		color: $white;
+	}
+
+	> a {
+
+		&:hover {
+			h2 {
+				color: $white;
+			}
+		}
+	}
+
+	#menu-button {
+		position: absolute;
+		top: $small-gutter;
+		right: $gutter;
+
+		#hamburger {
+			fill: $prime-color-lighter;
+			fill: $white;
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			#hamburger {
+				fill: $prime-color-lighter;
+			}
+		}
+	}
+
+	nav {
+
+		ul {
+			position: absolute;
+			top: $xlarge-gutter;
+			right: $gutter;
+
+			li {
+				text-align: right;
+				margin: 0.4em 0;
+
+				a {
+					padding: 0.2em 0.4em;
+					background-color: $prime-color-lighter;
+					color: $white;
+
+					&:hover {
+						color: $prime-color;
+					}
+				}
+				.current {
+					color: $prime-color;
+				}
+			}
+		}
+	}
+}
+
+// Needed for the js collapse of the menu
+.collaped-menu {
+	transition: 0.3s;
+	height: 0em;
+	overflow: hidden;
+}
+.uncollaped-menu {
+	transition: 0.3s;
+	height: 14em;
+	overflow: hidden;
+}
+
+.cross {
+	transition: 0.3s;
+
+	#hamburger {
+		#rectangle-2 {
+			transition: 0.3s;
+			opacity: 0;
+		}
+		#rectangle-1 {
+			transition: 0.3s;
+			transform: translateY(12px) rotate(45deg);
+			transform-origin: 50% 50%;
+		}
+		#rectangle-3 {
+			transition: 0.3s;
+			transform: translateY(-12px) rotate(-45deg);
+			transform-origin: 50% 50%;
+		}
+	}
+}
+.uncross {
+
+	#hamburger {
+		overflow: visible;
+
+		#rectangle-2 {
+			transition: 0.3s;
+			opacity: 1;
+		}
+		#rectangle-1 {
+			transition: 0.3s;
+			transform: translateY(0px) rotate(0deg);
+			transform-origin: 50% 50%;
+		}
+		#rectangle-3 {
+			transition: 0.3s;
+			transform: translateY(0px) rotate(0deg);
+			transform-origin: 50% 50%;
+		}
+	}
+}
+
+
+
+
+
+

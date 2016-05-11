@@ -1,0 +1,28 @@
+.home {
+
+	section {
+		@include flex(column, center);
+		padding: $gutter;
+
+		h1 {
+			width: 100%;
+			color: $prime-color;
+		}
+
+		article {
+			margin: 2em;
+			margin-top: 4em;
+		}
+	}
+
+	.welcome {
+		margin: 5em 0;
+
+		p {
+			background-color: $secondary-color;
+			padding: .15em;
+			margin: .15em;
+			color: $white;
+		}
+	}
+}

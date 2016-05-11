@@ -1,0 +1,60 @@
+footer {
+	/*padding: $gutter $xxlarge-gutter;*/
+	background-color: $prime-color;
+	@include flex(column, center);
+	justify-content: center;
+	padding: $gutter 0;
+	
+	h2 {
+		color: $prime-color-lighter;
+	}
+	h1 {
+		color: $white;
+	}
+	p {
+		color: $white;
+		padding: 0 1em;
+	}
+	a:first-of-type {
+		margin-bottom: 2em;
+	}
+	
+	.bg-link {
+		margin: 0;
+
+		&:hover {
+			background-color: $prime-color-lighter;
+			color: $font-black;
+		}
+	}
+
+	svg {
+		transform: scale(.7);
+
+		g {
+			fill: $prime-color-lighter;
+		}
+
+		&:hover {
+			g {
+				fill: $white;
+			}			
+		}
+	}
+}
+
+@keyframes highlight {
+	0% {
+		background-color: $prime-color;
+	}
+	50% {
+		background-color: $prime-color-lighter;
+	}
+	100% {
+		background-color: $prime-color;
+	}
+}
+
+#contact:target {
+	animation: highlight .7s;
+}
