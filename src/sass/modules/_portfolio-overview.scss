@@ -39,24 +39,27 @@ $height-two: 25em;
 	    ##{$projects} {
 			background-image: url('../img/portfolio/#{$projects}/header.jpg');
 
-			a {
-				transition: .2s;
-				background-color: $transparanse;
-
-				&:hover {
-					transition: .2s;
-					background-color: transparentize($bgcolor-lighten, 0.9);
-
-					h3, p {
-						transition: .2s;
-						opacity: 0;
-					}
-				}
-			}
 			h3, p {
 				transition: .2s;
 				opacity: 1;
 				color: if(lightness($bgcolor) < 50%, $snowWhite, $font-black);
+			}
+			a {
+				transition: .2s;
+				height: 100%;
+				background-color: transparentize($bgcolor-lighten, 0.2);
+			}
+
+			&:hover {
+
+				a {
+					background-color: $transparanse;
+					height: 5em;
+
+					h3, p {
+						transition: .2s;
+					}
+				}
 			}
 	    }
 	}
@@ -83,6 +86,25 @@ $height-two: 25em;
 
 			a {
 				height: $height-two;
+			}
+		}
+	}
+
+	// GitHub exclusive
+	#github {
+		background-size: 56%;
+
+		a {
+			background-color: white;
+		}
+
+		&:hover {
+			p {
+				text-decoration: underline;
+			}
+			a {
+				background-color: $transparanse;
+				height: 100%;
 			}
 		}
 	}
