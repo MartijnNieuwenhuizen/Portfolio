@@ -52,10 +52,9 @@ $height-two: 25em;
 
 			&:hover {
 
-
 				a {
 					background-color: rgba($transparanse, 0);
-					filter: blur(3px);
+					opacity: .3;
 					height: 5em;
 
 					h3, p {
