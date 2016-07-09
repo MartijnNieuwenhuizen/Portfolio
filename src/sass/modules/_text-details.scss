@@ -7,4 +7,24 @@
 	background-color: $code-bg;
 	padding: .6em;
 	margin: .5em 0;
+
+	span {
+		display: block;
+
+		&.break-1 {
+			padding-left: 1em;
+		}
+		&.break-2 {
+			padding-left: 2em;
+		}
+		&.break-3 {
+			padding-left: 3em;
+		}
+		&.break-4 {
+			padding-left: 4em;
+		}
+		&.break-5 {
+			padding-left: 5em;
+		}
+	}
 }

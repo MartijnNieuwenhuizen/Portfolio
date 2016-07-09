@@ -1,0 +1,85 @@
+@@include('./src/html/includes/_base/head.html')
+@@include('./src/html/includes/_base/nav.html')
+
+<main class="detail blog-detail">
+
+    <h1>You should use the GitHub branches.</h1>
+
+	<section class="meta">
+		<span class="date">02-07-2016</span> <p class="tags"><span>GitHub</span><span>Branches</span></p>
+	</section>
+
+    <p class="note">
+		GitHub gives you the possibility to create an infinite amount of branches, but why should you use to do that? After a talk I had at GitHub Amsterdam, this became clear to me and I would like to share it with you because it improved my working process.
+	</p>
+
+    <img src="../img/article/github.png" alt="The GitHub logo" class="hero-img">
+
+    <p>
+        At GitHub, there’s a branch for every adjustment there’s made. With the simple reason to separate the little projects from the main branch. These branches are called: Feature branches and as the name probably will tell you, you create a new feature in this branch.
+        After the feature is done, you can request a pull request, get some issues, fix them and merge your new feature with the bigger branch. After this, you can probably deploy a new version and you’re done.
+    </p>
+
+    <p>
+        Of course, this is the ideal world and not everybody lives in that world. So what if you work at a company who don’t use issues, pull requests and multiple branches, why would I still start creating feature branches?
+
+    </p>
+    <p>
+        Because of <strong>Maintainability</strong>, <strong>Structure</strong>, <strong>a better Overview</strong> and <strong>a Great Modular Approach</strong>. If you develop a new feature, adjustment or every other minor change, on a new branch, this is separated from the other processes. You can simply develop your new thing, pull the main branch and push your new feature. This will create a log of what happened when and gives you a great overview of your entire project. With that, the structure of your project improves and with that the Maintainability.
+    </p>
+    <p>
+        I’ve used this at my latest project and will show you how I did that and what you should do different if you will use it.
+    </p>
+
+    <h2>First, Structure</h2>
+    <p>
+        This is how my structure goes.
+        There is one <strong>master</strong> branch and one <strong>develop</strong> branch. The only branch who is allowed to talk to the master branch is the develop branch. The only thing the live server is allowed to pull is the master branch. This means every branch can be merged into the develop branch, tested and pushed to the master branch after a GO. This prevents bugs on the live server.
+
+    </p>
+    <p>
+        Here’s an illustration of this process:
+        <img src="../img/article/structure.png" alt="My GitHub branch structure">
+    </p>
+
+    <h2>Maintainability</h2>
+    <p>
+        Client: “That thing we did with the flying animation needs to go”. Now if you committed your whole project on one branch, this will be an issue! Not if you’ve just created a branch for this bit. You can easily see or redo the changes from this branch and the “flying animation” is gone.
+    </p>
+
+    <h2>A better Overview</h2>
+    <img src="../img/article/overview.png" alt="My GitHub branch overview" class="hero-img">
+    <p>
+        This image shows all the merges into different branches. This contributes are only from myself, as I was the only one working on the project. But if you work with two or multiple developers on one project, this system will provide you with a very clear overview of the entire project
+    </p>
+
+    <h2>A Great Modular Approach</h2>
+    <p>
+        If you need te create a new branch for every new feature/item added, you will start by giving this branch a name. And that, as we all know I guess, is one of the most difficult things to do. A tip I got at CSSday from Harry Roberts is to keep a name as simple and objective as possible. If you use this same name for the classes/files you might add (if you CSS or JavaScript has a modular approach) for your branch you add, the description and therefore purpose of this branch is immediately clear to your fellow developers.
+        This pushes you to think modular from the start, which improves maintainability.
+    </p>
+
+    <blockquote>
+        Tip: If you don’t use Git in your projects, please start using it!
+    </blockquote>
+
+    <h2>Do’s and Dont’s</h2>
+    <p>
+        The first thing you need to do is create your first feature branch. I’ve tried to use a lot of different branches for every new feature I started, but basically I was setting up the routes on the server. So call this branch ’server-routes’ and start with your feature branches if the absolute core is set.
+    </p>
+    <p>
+        You will end up committing something in the wrong branch. Don’t worry about that too much. It happened and just add this as a message to your commit message. One tip, if you use Atom as your Code-editor, in the right-bottom corner it will tell you on which branch you are and Sublime has a plugin for this. It might help you!
+    </p>
+    <p>
+        If you find out that your branch is too big and it needs to be more specific, commit your branch and be more specific. There’s alway’s the possibility to remove a branch!
+    </p>
+
+    <h2>Thanks for reading!</h2>
+    <p>
+        Thank you for reading and if you have any feedback or questions, please add a comment and I will get back to you.
+
+    </p>
+
+</main>
+
+@@include('./src/html/includes/_base/footer.html')

@@ -1,0 +1,124 @@
+@@include('./src/html/includes/_base/head.html')
+@@include('./src/html/includes/_base/nav.html')
+
+<main class="detail blog-detail">
+
+    <h1>Why you should progressive enhance everything you build!</h1>
+
+	<section class="meta">
+		<span class="date">02-07-2016</span> <p class="tags"><span>progressive-enhancement</span><span>JavaScript</span><span>HTML</span></p>
+	</section>
+
+    <p class="note">
+		I recently attended a view congresses about web development and there was alway’s some talk about progressive enhancement, and why we should do this. And I agree, you should definitely progressive enhance everything you build, but what do you say when someone asks you ‘Why?’.
+	</p>
+
+    <img src="../img/article/this-is-for-everyone.jpg" alt="The Tweet from Tim Berners Lee at the 2012 Olympics in London" class="hero-img">
+
+    <p>
+        Let’s start with the classic reason: This is for everyone. The Tweet from Tim Berners Lee say’s it all.
+        He created the web for everyone, so in that train of thought, you shouldn’t exclude anyone.
+        This means also the people without a fancy MacBook, new browser, and a lightning fast internet connection.
+    </p>
+
+    <blockquote>
+        So an argument like “because it’s hard” just isn’t true!
+    </blockquote>
+
+    <h2>Nobody uses my site without JavaScript</h2>
+    <p>
+        Well, that’s just not true! Not having JS doesn’t mean JS is disabled.
+        It can simply mean that someone has a browser that doesn’t support JS or a bit of your JS.
+        Or someone’s internet connection isn’t that quick. They shouldn’t be punished for this!
+        Especially when progressive enhancement is so simple, if you do it the right way.
+    </p>
+
+    <h2>This is how simple Progressive Enhancement can be</h2>
+    <p>
+        If, for instance, you want to create a web app where people can indicate when they will be in the office, your HTML of your calendar might look something like this:
+    </p>
+
+    <p class="code">
+        <span class="break-1">&lt;ul class=”calendar-container”></span>
+          <span class="break-2">{#each days}</span>
+            <span class="break-3">&lt;li class=”calendar-days — item”&gt;</span>
+              <span class="break-4">&lt;input id=”{{@key}}” type=”checkbox” name=”{{fullDate}}”&gt;</span>
+              <span class="break-4">&lt;label for=”{{@key}}”&gt;{{@key}}&lt;/label&gt;</span>
+              <span class="break-4">&lt;span class=”amount”&gt;{{indication}}%&lt;/span&gt;</span>
+            <span class="break-3">&lt;/li&gt;</span>
+          <span class="break-2">{/each}</span>
+        <span class="break-1">&lt;/ul&gt;</span>
+    </p>
+    <p><i>This is a Handlebars template which will create a 'li' for every day in a month</i></p>
+
+    <p>
+        You can request all the data from your MongoDB with a JavaScript API call and let the client handle the logistics.
+        Getting the data, transforming the data, calculating, rewriting data and storing it again. Now that isn’t really work for a client.
+        That’s the server’s job.
+    </p>
+
+    <h2>So how would that look like</h2>
+    <p>
+        In your JavaScript file, you will make a GET request to ‘/calendar’. Your server can response to this request.
+        If your server requests and handle the data you can create a response for this request with the required data for the client.
+        You will just have to insert/change the response on the client side, without having to do all the calculations.
+    </p>
+
+    <p>
+        In your JavaScript file, you will make a GET request to ‘/calendar’. Your server can response to this request.
+        If your server requests and handle the data you can create a response for this request with the required data for the client.
+        You will just have to insert/change the response on the client side, without having to do all the calculations.
+    </p>
+
+    <h2>You already git it</h2>
+    <p>
+        You just wrote a response to a GET request, done by an API call. But if you will go to www.your-url.com/calendar' will also send a request to ‘/calendar’.
+        This means you can use the same code on the server to request something with an API call or a browser.
+    </p>
+
+    <h2>The other way around</h2>
+    <p>
+        There’s one thing wrong here, the order in which this is done.
+        This is the right way it should be done:
+    </p>
+
+    <p><strong>1. Create your html</strong></p>
+    <p class="code">
+        <span class="break-1"> &lt;form action=”/” method=”post”&gt; </span>
+           <span class="break-2"> &lt;ul class=”calendar-container”&gt; </span>
+            <span class="break-3"> {{#each days}} </span>
+              <span class="break-4"> &lt;li class=”calendar-days — item”&gt; </span>
+                <span class="break-5"> &lt;input id=”{{@key}}” type=”checkbox” name=”{{fullDate}}”&gt; </span>
+                <span class="break-5"> &lt;label for=”{{@key}}”&gt;{{@key}}&lt;/label&gt; </span>
+                <span class="break-5"> &lt;span class=”amount”&gt;{{indication}}%&lt;/span&gt; </span>
+              <span class="break-4"> &lt;/li&gt; </span>
+            <span class="break-3"> {{/each}} </span>
+          <span class="break-2"> &lt;/ul&gt; </span>
+        <span class="break-1"> &lt;/form&gt; </span>
+    </p>
+
+    <p>
+        Just like a GET request, you can use the same code for a POST request.
+        A form can make this request for you and if you want to do it on the web app way, include a JS POST request and make changes depending on the response.
+    </p>
+
+    <p><strong>2. Write code on the server side,</strong> like described above.</p>
+    <p>
+        <strong>3. Write the client side JS if you want to create a web app.</strong>All the logical bits are already dealt with. You only need to display it!
+    </p>
+
+    <p>
+        So an argument like “because it’s hard” just isn’t true! If you start where you need to start and work your way up, you will get a more reliable web app and with a tiny amount of work, you can create your awesome web app, just start with the right HTML and server side code.
+    </p>
+
+    <h2>Wrapping-up</h2>
+    <p>
+        If done right, Progressive Enhancement isn’t that hard. But this is just a tiny bit of why and how you should Progressive enhance anything, so there are more posts coming about it! Follow me if you want a notification for the next story.
+    </p>
+    <p>
+        If you have any questions or feedback, please leave a comment and I will get back to you.
+    </p>
+
+</main>
+
+@@include('./src/html/includes/_base/footer.html')

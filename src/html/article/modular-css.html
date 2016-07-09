@@ -1,0 +1,166 @@
+@@include('./src/html/includes/_base/head.html')
+@@include('./src/html/includes/_base/nav.html')
+
+<main class="detail blog-detail">
+
+    <h1>My approach to modular CSS</h1>
+
+	<section class="meta">
+		<span class="date">02-07-2016</span> <p class="tags"><span>progressive-enhancement</span><span>JavaScript</span><span>HTML</span></p>
+	</section>
+
+    <p class="note">
+		GitHub gives you the possibility to create an infinite amount of branches, but why should you use to do that? After a talk I had at GitHub Amsterdam, this became clear to me and I would like to share it with you because it improved my working process.
+	</p>
+
+    <img src="../img/article/code.jpg" alt="A snapshot from my code editor" class="hero-img">
+
+    <h2>Filesystem</h2>
+    <p>
+        I use Sass for a modular approach to CSS. This means I can create a lot of smaller files who are compiled in one style.min.css. If you want to handle this much files, you will need a system to divide your files. This is my way:
+    </p>
+
+    <p>
+        <strong>base</strong>
+        <ul>
+            <li>animations.scss</li>
+            <li>colors.scss</li>
+            <li>grid.scss</li>
+            <li>layout.scss</li>
+            <li>typography-calculation.scss</li>
+            <li>typography-declarations.scss</li>
+        </ul>
+    </p>
+    <p>
+        <strong>components</strong>
+        <ul>
+            <li>blockquote.scss</li>
+            <li>buttons.scss</li>
+            <li>links.scss</li>
+            <li>lists.scss    </li>
+        </ul>
+    </p>
+    <p>
+        <strong>modules</strong>
+        <ul>
+            <li>main-nav.scss</li>
+            <li>footer.scss</li>
+            <li>blog-layout.scss</li>
+            <li>blog-preview.scss</li>
+            <li>this-can-go-as-far-as-you-want.scss</li>
+        </ul>
+    </p>
+    <p>
+        <strong>utilities</strong>
+        <ul>
+            <li>global-vars.scss</li>
+            <li>mixins.scss</li>
+        </ul>
+    </p>
+
+    <h2>how to begin (Base)</h2>
+    <p>
+        At every start of the project, you need to set some basic values. For instance, the <strong>typography-calculation.scss</strong> calculates every font-size for a project on the base of the modular scale.
+        All it takes is one value like <strong>$ratio: 1.61803399;</strong> and the entire font-ratio is based on the Golden Ratio.
+        Most of the time I create the grid needed for the layout, add a list of color’s I’m going to need a lot to the colors.scss and at this moment you can start your first component.
+    </p>
+
+    <blockquote>
+        If isn’t the case, it’s time to talk to the designer.
+    </blockquote>
+
+    <h2>Components</h2>
+    <p>
+        The map <strong>components</strong> includes all the generic components I need to style for a project. This can be a form, a button, a link, a list and so on.
+        It’s important to start here. In most designs, a list will have the same basic styling like paddings, margins, colors, max-widths and so on. If isn’t the case, it’s time to talk to the designer.
+    </p>
+    <p>
+        After styling the base of every component needed for this project, you can start creating the layout. In the layout.scss you should declare the basic styles this layout needs. So don’t go further that a global styling on your base elements like this:
+    </p>
+
+    <p class="code">
+        <span class="break-1">body {</span>
+          <span class="break-2">// code</span>
+            <br>
+          <span class="break-2">main {</span>
+            <span class="break-3">// code</span>
+        <span class="break-2">}</span>
+          <span class="break-2">> header {</span>
+            <span class="break-3">// code</span>
+        <span class="break-2">}</span>
+          <span class="break-2">> footer {</span>
+            <span class="break-3">// code</span>
+        <span class="break-2">}</span>
+    <span class="break-1">}</span>
+    </p>
+
+    <h2>Now the basics are done (Modules)</h2>
+    <p>
+        Now you got your basic layout which means you can start with the modules. Create a module for every part of the page. You can choose to go as deep as you want and if you have a really big project, you can start thinking about stuff like BEM and utility classes.
+        The way BEM works or my opinion of it isn’t relevant to this article, but one thing must be said:
+    </p>
+    <blockquote>
+        If you can do without something, why use it!?
+    </blockquote>
+
+    <p>
+        <strong>So modules</strong>If you have a blog section on your page, you will probably have an overview page of your blogs and a detail page for every blog. I would start to create this three files:
+        <ul>
+            <li><strong>blog-overview.scss:</strong> Includes the layout of the blog previews</li>
+            <li><strong>blog-part.scss:</strong> Includes the styling of a blog part in the overview</li>
+            <li><strong>blog-detail.scss:</strong> Includes the layout of the detail blog.</li>
+        </ul>
+    </p>
+
+    <img src="" alt="">
+
+    <p>
+        If you’ve done this right, you would already have a generic styling of tags like an <strong>&lt;blockquote&gt;</strong>, <strong>&lt;li&gt;</strong>, <strong>&lt;a&gt;</strong> and <strong>&lt;p&gt;</strong>.
+            So apart from some custom elements, there isn’t much to style here anymore.
+            You could create a file for every custom element inside a detail blog, but if it’s not too big, you could go with just one file: blog-detail-parts.scss.
+
+    </p>
+    <p>
+        If you treat every component of your page like this, you can easily <strong>reuse stuff</strong> and it <strong>remains maintainable</strong>.
+    </p>
+
+    <h2>Adding classes</h2>
+    <p>
+        If you want to style a button inside of this blog detail page, you could choose to add a custom class for this button. But in my opinion, that’s where CSS selectors are for. Apart from a style, specific to one blog, this is the way I recommend you to style it.
+    </p>
+    <p class="code">
+        <span class="break-1">.blog-detail {</span>
+          <span class="break-2">// code</span>
+            <br>
+          <span class="break-2">button {</span>
+            <span class="break-3">// code</span>
+        <span class="break-2">}</span>
+        <span class="break-1">}</span>
+    </p>
+
+    <p>
+        So no fancy BEM selectors here means <strong>no clutter in your HTML or CSS</strong>.
+    </p>
+    <p>
+        Adding a specific button for a specific blog you only would use only once, is a <strong>legitimate reason to add a class</strong> instead of using a CSS selector.
+    </p>
+    <blockquote>
+        TIP: always start your files class-name with the same name as the file itself.
+    </blockquote>
+
+    <h2>Utilities</h2>
+    <p>
+        The files in the utilities folder are used throughout the entire project. In the global-vars.scss I like to create a list of the most used breakpoints. A layout mostly breaks altogether, I would recommend using one var for this, so if you need to change the breakpoint, you only have to do it in one place. If you just need to break a small part, use a one-time declaration like you’re used to.
+    </p>
+
+    <h2>Wrapping up</h2>
+    <p>
+        This is the way I like to write Modular CSS, but there are a lot of way’s to do it. If you’re interested in this subject, I would like to encourage you to get inspired by this workflow instead of implementing it without a thought. That way you will remember you structure which makes maintaining a project easier.
+    </p>
+    <p>
+        If you have any questions or feedback, please leave a comment and I will get back to you.
+    </p>
+
+</main>
+
+@@include('./src/html/includes/_base/footer.html')

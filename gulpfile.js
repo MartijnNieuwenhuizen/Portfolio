@@ -62,7 +62,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('browserify', function() {
-    	
+
    	return gulp.src(config.js.src)
    		.pipe(plumber({
              errorHandler: config.error
@@ -78,7 +78,7 @@ gulp.task('browserify', function() {
 
 // Compress HTML
 gulp.task('html', function() {
-	
+
 	// Fileinclude
 	return gulp.src(config.html.src)
 		.pipe(plumber({
@@ -89,7 +89,7 @@ gulp.task('html', function() {
 	    	basepath: '@root'
 	    }))
 	    .pipe(gulp.dest(config.base));
-	
+
 
 	return gulp.src(config.html.src)
 	.pipe(minifyhtml())
@@ -118,13 +118,13 @@ gulp.task('sass', function() {
 
 // Static server
 gulp.task('browser-sync', function() {
-   
+
     browserSync.init({
         server: {
             baseDir: config.base,
             startPath: '/',
             open: true
-        }, 
+        },
         tunnel: "martijnnieuwenhuizen"
     });
 

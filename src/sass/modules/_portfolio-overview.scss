@@ -28,13 +28,13 @@ $height-two: 25em;
 			margin: 0em;
 		}
 	}
-	
+
 	/* loop thrue all the projectes */
 	@each $projects, $bgcolor in $projects {
 		/* colors */
 		$bgcolor-lighten: lighten($bgcolor, 40);
 		$transparanse: transparentize($bgcolor-lighten, 0.2);
-		
+
 		/* single project */
 	    ##{$projects} {
 			background-image: url('../img/portfolio/#{$projects}/header.jpg');
@@ -52,8 +52,10 @@ $height-two: 25em;
 
 			&:hover {
 
+
 				a {
-					background-color: $transparanse;
+					background-color: rgba($transparanse, 0);
+					filter: blur(3px);
 					height: 5em;
 
 					h3, p {
@@ -109,4 +111,3 @@ $height-two: 25em;
 		}
 	}
 }
-

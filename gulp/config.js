@@ -9,12 +9,12 @@ var config = {
     dist: './dist/',
     base: './build/',
     taskPath: './gulp/tasks/',
-    
+
     html: {
         watch: ['src/html/**/*.html'],
         src: ['./src/html/**/*.html', '!./src/html/includes/**']
     },
-    
+
     sass: {
         watch: ['src/sass/**/*.scss'],
         src: ['./src/sass/main.scss'],
@@ -28,14 +28,14 @@ var config = {
         folder: 'js/',
         destFile: 'main.min.js'
     },
-    
+
     images: {
         watch: ['src/img/**'],
         src: ['./src/img/**'],
         srcFolder: './src/img/',
         folder: 'img/'
     },
-    
+
     misc: {
         src: [
             'fonts/**',
