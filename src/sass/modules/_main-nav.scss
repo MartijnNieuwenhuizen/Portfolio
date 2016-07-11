@@ -3,12 +3,14 @@ header.menu {
 	background-color: $prime-color;
 	@include flex(column, flex-start);
 	justify-content: center;
-	
+
 	h2 {
 		color: $prime-color-lighter;
 	}
 	h1 {
 		color: $white;
+		height: 1.2em;
+		text-transform: capitalize;
 	}
 
 	> a {
@@ -120,9 +122,3 @@ header.menu {
 		}
 	}
 }
-
-
-
-
-
-

@@ -36,7 +36,7 @@ var currentTitle = {
 	replaceIndex: function(content) {
 
 		if ( content == "index" || content == "" ) {
-			content = "Hello"
+			content = "hello"
 		}
 		return content;
 
