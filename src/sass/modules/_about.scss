@@ -53,4 +53,14 @@
 			color: $white;
 		}
 	}
+
+	a {
+		border-bottom: 2px solid lighten($secondary-color-lighter, 10%);
+		transition: .3s;
+		box-shadow: inset 0em 0 0 0 transparent;
+
+		&:hover {
+			box-shadow: inset 12em 0 0 0 lighten($secondary-color-lighter, 10%);
+		}
+	}
 }
