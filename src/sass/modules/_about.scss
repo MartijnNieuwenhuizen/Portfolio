@@ -63,4 +63,26 @@
 			box-shadow: inset 12em 0 0 0 lighten($secondary-color-lighter, 10%);
 		}
 	}
+
+	form {
+		margin-top: -3.2em;
+	}
+	.right {
+		background-color: $prime-color;
+		border-bottom: 1px solid $white;
+
+		&:focus {
+			background-color: $prime-color;
+			border-bottom: 1px solid $white;
+		}
+	}
+	.wrong {
+		background-color: $secondary-color;
+		border-bottom: 1px solid $white;
+
+		&:focus {
+			background-color: $secondary-color;
+			border-bottom: 1px solid $white;
+		}
+	}
 }

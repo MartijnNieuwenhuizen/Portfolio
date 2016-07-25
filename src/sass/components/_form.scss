@@ -1,0 +1,37 @@
+form {
+    font-size: 1.313rem;
+    padding: 1.7em;
+
+    label, input {
+        display: block;
+    }
+    input:not([type="submit"]) {
+        padding: .3em .7em;
+        font-size: inherit;
+        border: none;
+        border-bottom: 1px solid $gray;
+        color: $white;
+        transition: .3s;
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+            background-color: $gray-lighten;
+            border: none;
+            border-bottom: 1px solid $white;
+        }
+    }
+
+    input[type="submit"] {
+        padding: .3em .7em;
+        font-size: inherit;
+        border: none;
+        color: $white;
+        background-color: $gray-lighten;
+        margin: .7em 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
